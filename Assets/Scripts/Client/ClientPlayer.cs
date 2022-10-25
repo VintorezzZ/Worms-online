@@ -19,15 +19,13 @@ public class ClientPlayer : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (IsServer && !IsHost || !IsOwner)
-        {
-            enabled = false;
+        enabled = IsClient && IsLocalPlayer;
+        if (!enabled)
             return;
-        }
 
-        if (!_weapon)
+        if (IsLocalPlayer)
         {
-            
+            CameraFollow360.player = transform;
         }
         
         base.OnNetworkSpawn();
@@ -35,9 +33,6 @@ public class ClientPlayer : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsOwner)
-            return;
-        
         _weapon?.Process();
     }
 
