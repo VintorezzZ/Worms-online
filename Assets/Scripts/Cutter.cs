@@ -35,15 +35,15 @@ public class Cutter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            DoCut();
-        }
+        // if (Input.GetMouseButtonDown(1))
+        // {
+        //     DoCut();
+        // }
     }
 
     public void DoCut()
     {
-        // Делаем из коллайдера круга объект Line
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Line
         List<Vector2> _circlePointsPositions = _circleCollider.GetPath(0).ToList();
         for (int i = 0; i < _circlePointsPositions.Count; i++)
         {
@@ -53,7 +53,7 @@ public class Cutter : MonoBehaviour
 
 
         List<List<Point>> allSplines = new List<List<Point>>();
-        // Проходимся по всем путям коллайдера
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         for (int p = 0; p < _landCollider.pathCount; p++)
         {
             List<Vector2> _linePointsPositions = _landCollider.GetPath(p).ToList();
@@ -63,7 +63,7 @@ public class Cutter : MonoBehaviour
             }
             Line landLine = LineFromCollider(_linePointsPositions);
 
-            // Тут надо проверить, что начальная точка снаружи
+            // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             for (int i = 0; i < landLine.Points.Count; i++)
             {
                 if (_circleCollider.ClosestPoint(landLine.Points[0].Position) == landLine.Points[0].Position)
@@ -86,21 +86,21 @@ public class Cutter : MonoBehaviour
 
     public List<List<Point>> Substraction(Line landLine, Line circleLine)
     {
-        // Ставим дефолтные NextPoint для круга
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ NextPoint пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         for (int i = 0; i < circleLine.Points.Count; i++)
         {
             int nextIndex = GetNext(i, circleLine.Points.Count, false);
             circleLine.Points[i].NextPoint = circleLine.Points[nextIndex];
         }
 
-        // Перебираем все сегменты, создаем точки пересечения
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         for (int l = 0; l < landLine.Segments.Count; l++)
         {
             Segment landSegment = landLine.Segments[l];
             Vector2 al = landSegment.A.Position;
             Vector2 bl = landSegment.B.Position;
-            // Смотрим какие сегменты круга пересекают этот сегмент
-            // Тут надо учесть что пересечения может быть два
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
             for (int c = 0; c < circleLine.Segments.Count; c++)
             {
                 Segment circleSegment = circleLine.Segments[c];
@@ -121,7 +121,7 @@ public class Cutter : MonoBehaviour
             }
         }
 
-        // Собираем новый массив точек с учетом пересечений
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         RecalculateLine(landLine);
         RecalculateLine(circleLine);
 
@@ -132,17 +132,17 @@ public class Cutter : MonoBehaviour
             while (allPoints.Count > 0)
             {
                 Point thePoint = allPoints[0];
-                //смотрим находится ли точка снаружи
+                //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 if (_circleCollider.ClosestPoint(thePoint.Position) == thePoint.Position || thePoint.IsCross)
                 {
                     allPoints.RemoveAt(0);
                     continue;
                 }
-                // Собираем точки по цепочке назначаем им NextPoint
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ NextPoint
                 for (int i = 0; i < _testIterations; i++)
                 {
                     Line currentLine;
-                    // ccw -- против часовой стрелки
+                    // ccw -- пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                     bool ccw;
                     if (onLand)
                     {
@@ -176,7 +176,7 @@ public class Cutter : MonoBehaviour
             while (allPoints.Count > 0)
             {
                 Point thePoint = allPoints[0];
-                //смотрим находится ли точка снаружи
+                //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 if (_circleCollider.ClosestPoint(thePoint.Position) == thePoint.Position || thePoint.IsCross)
                 {
                     allPoints.RemoveAt(0);
@@ -187,7 +187,7 @@ public class Cutter : MonoBehaviour
                     List<Point> newSpline = new List<Point>();
                     allSplines.Add(newSpline);
 
-                    // Собираем точки по цепочке
+                    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                     Point startPoint = thePoint;
                     Point point = thePoint;
 
@@ -226,7 +226,7 @@ public class Cutter : MonoBehaviour
         line.Points = newPoints;
     }
 
-    // Сместьть все элементы списка на 1
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 1
     void ReorderList<T>(List<T> list)
     {
         var first = list[0];

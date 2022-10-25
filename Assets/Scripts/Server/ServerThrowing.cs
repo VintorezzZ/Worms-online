@@ -14,6 +14,7 @@ namespace Server
             Vector3 velocity = delta * _speedMultiplier;
             
             ServerGrenade grenade = Instantiate(_explodePrefab, transform.position, Quaternion.identity);
+            grenade.owner = owner;
             grenade.SetVelocity(velocity);
             grenade.GetComponent<NetworkObject>().Spawn();
             base.Attack(delta);

@@ -50,6 +50,9 @@ GameObject:
   - component: {fileID: 1383186452}
   - component: {fileID: 1383186451}
   - component: {fileID: -2336137014467155517}
+  - component: {fileID: 2363964762851875769}
+  - component: {fileID: -2516107537052032483}
+  - component: {fileID: 4186447620614770183}
   m_Layer: 6
   m_Name: Worm
   m_TagString: Untagged
@@ -156,6 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponPrefab: {fileID: 2898147816736112948, guid: eccaef32f360eaf4d83a2d02819e5c33, type: 3}
   _weaponRoot: {fileID: 6528936326134896478}
+  _weapon: {fileID: 0}
+  damageReceiver: {fileID: 0}
 --- !u!114 &4837024941505413246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b29c47c6e3b3224fab30dda410967c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Box: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+  m_NameLabelOffset: {x: 0, y: 70}
+  m_ResourceBarsOffset: {x: 0, y: 100}
+  _weaponPrefab: {fileID: 0}
+  _weaponRoot: {fileID: 0}
 --- !u!114 &1383186450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,12 +209,12 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
   SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -235,6 +245,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HorizontalInput: 0
+--- !u!114 &2363964762851875769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837024941505413245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6651552bb6d4c08a086afc36241614e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NetworkLifeState: {fileID: -2516107537052032483}
+--- !u!114 &-2516107537052032483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837024941505413245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55af76fdefeb4eb3aae69b0938b3386b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LifeState:
+    m_InternalValue: 0
+--- !u!114 &4186447620614770183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837024941505413245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf455fe975fd4a118ba78649fbf0df7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPoints:
+    m_InternalValue: 0
 --- !u!1 &4837024942217221961
 GameObject:
   m_ObjectHideFlags: 0

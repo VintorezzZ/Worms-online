@@ -7,8 +7,8 @@ namespace DefaultNamespace
 {
     public class ClientInputSender : NetworkBehaviour
     {
-        public Input[] Inputs = new Input[5];
-        public float HorizontalInput;
+        [HideInInspector] public Input[] Inputs = new Input[5];
+        [HideInInspector] public float HorizontalInput;
 
         public override void OnNetworkSpawn()
         {

@@ -14,8 +14,8 @@ namespace DefaultNamespace
         [SerializeField] private float _speed = 2f;
         [SerializeField] private float _jumpSpeed = 5f;
         
-        public NetworkVariable<bool> IsGrounded = new NetworkVariable<bool>();
-        public NetworkVariable<int> LastMoveDirection = new NetworkVariable<int>();
+        [HideInInspector] public NetworkVariable<bool> IsGrounded = new NetworkVariable<bool>();
+        [HideInInspector] public NetworkVariable<int> LastMoveDirection = new NetworkVariable<int>();
 
         public override void OnNetworkSpawn()
         {
