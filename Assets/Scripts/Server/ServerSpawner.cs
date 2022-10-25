@@ -7,7 +7,7 @@ public class ServerSpawner : MonoBehaviour
     {
         NetworkManager.Singleton.OnClientConnectedCallback += (id) =>
         {
-            if (NetworkManager.Singleton.IsClient)
+            if (NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsClient)
                 return;
             
             var client = NetworkManager.Singleton.ConnectedClients[id];
