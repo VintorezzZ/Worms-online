@@ -19,11 +19,9 @@ namespace DefaultNamespace
 
         public override void OnNetworkSpawn()
         {
-            if (!IsServer)
-            {
-                enabled = false;
+            enabled = IsServer;
+            if (!enabled)
                 return;
-            }
             
             base.OnNetworkSpawn();
         }

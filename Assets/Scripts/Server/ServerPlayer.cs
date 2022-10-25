@@ -43,7 +43,7 @@ namespace Server
             _weapon = Instantiate(_weaponPrefab, _weaponRoot.position, _weaponRoot.rotation) as ServerWeapon;
             _weapon.owner = this;
             var networkWeapon = _weapon.GetComponent<NetworkObject>();
-            networkWeapon.Spawn();
+            networkWeapon.SpawnWithOwnership(OwnerClientId);
             networkWeapon.transform.parent = this.transform;
             _clientPlayer.OnChangeWeaponClientRpc();
             
@@ -105,12 +105,6 @@ namespace Server
             {
                 
             }
-        }
-        
-        [ServerRpc]
-        public void ThrowServerRpc(Vector3 delta)
-        {
-            _weapon.Attack(delta);
         }
     }
 }

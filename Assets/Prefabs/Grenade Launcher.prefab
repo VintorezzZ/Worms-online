@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2898147816736112948}
   - component: {fileID: 878406192454590341}
   - component: {fileID: 8761357938438439566}
-  - component: {fileID: 7953780578379840532}
+  - component: {fileID: 6057567096783046226}
   m_Layer: 0
   m_Name: Grenade Launcher
   m_TagString: Untagged
@@ -133,6 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad866f9c61c42e982834440de88bce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  rotation:
+    m_InternalValue: {x: 0, y: 0, z: 0}
   _speedMultiplier: 0.03
   _explodePrefab: {fileID: 6645350588548127904, guid: 99bbc875f63d84040a0182c4265670c7, type: 3}
 --- !u!114 &878406192454590341
@@ -147,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c51b252ec7425e90e1440b97fe27a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverOwner: {fileID: 0}
   _renderer: {fileID: 1402340884559673094}
   _sencetivity: 0.01
   _pointerLine: {fileID: 1402340884950610736}
@@ -166,7 +170,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &7953780578379840532
+--- !u!114 &6057567096783046226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +179,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1402340884549914891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 0
@@ -191,7 +195,7 @@ MonoBehaviour:
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
   InLocalSpace: 1
-  Interpolate: 1
+  Interpolate: 0
 --- !u!1 &1402340884559673088
 GameObject:
   m_ObjectHideFlags: 0

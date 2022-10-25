@@ -25,10 +25,9 @@ namespace Client
 
         public override void OnNetworkSpawn()
         {
-            if (!IsOwner)
-            {
-                enabled = false;
-            }
+            enabled = IsClient;
+            if (!enabled)
+                return;
         
             base.OnNetworkSpawn();
         }
@@ -44,8 +43,10 @@ namespace Client
             if (Input.GetMouseButton(0))
             {
                 Vector3 delta = Input.mousePosition - mouseStart;
-                transform.right = delta;
+                //transform.right = delta;
                 _pointerLine.localScale = new Vector3(delta.magnitude * _sencetivity, 1, 1);
+                
+                _serverThrowing.UpdateRotationServerRpc(delta);
             }
 
             if (Input.GetMouseButtonUp(0))
@@ -53,8 +54,10 @@ namespace Client
                 _renderer.enabled = false;
                 Vector3 delta = Input.mousePosition - mouseStart;
                 
-                serverOwner.ThrowServerRpc(delta);
+                _serverThrowing.ThrowServerRpc(delta);
             }
+
+            transform.right = _serverThrowing.rotation.Value;
         }
     }
 }
