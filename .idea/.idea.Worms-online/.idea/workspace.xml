@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f535b2b-dfa0-4f50-b12c-c2fe96c6f6d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/CircleMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Client test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Client test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Circle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Circle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Circle.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CircleMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CircleMove.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/CircleMove.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Client/ClientGrenade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Client/ClientGrenade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Client/ClientPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Client/ClientPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Client/ClientThrowing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Client/ClientThrowing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColliderRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/ColliderRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ColliderRenderer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/ColliderRenderer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cutter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Cutter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cutter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Cutter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Explode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Explode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Intersection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Intersection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Intersection.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Intersection.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntersectionEditorTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/IntersectionEditorTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntersectionEditorTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/IntersectionEditorTest.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Land.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Land.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Land.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Land.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerGrenade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerGrenade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Server/ServerThrowing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Server/ServerThrowing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Sph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sph.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cutter/Sph.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="2f535b2b-dfa0-4f50-b12c-c2fe96c6f6d3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +70,7 @@
       <updated>1666624039396</updated>
       <workItem from="1666624054873" duration="4439000" />
       <workItem from="1666630481958" duration="3624000" />
-      <workItem from="1666683986767" duration="2025000" />
+      <workItem from="1666683986767" duration="3528000" />
     </task>
     <servers />
   </component>

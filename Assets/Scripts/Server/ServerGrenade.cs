@@ -1,4 +1,5 @@
-﻿using Unity.Netcode;
+﻿using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,9 +30,16 @@ namespace DefaultNamespace
         
             cutter.transform.position = transform.position;
             _clientGrenade.OnCollisionEnterClientRpc(transform.position);
-            Invoke(nameof(DoCut), 0.001f);
-        
+            Invoke(nameof(DoCut), 0.01f);
+            StartCoroutine(DespawnRoutine());
+            
             dead = true;
+        }
+
+        private IEnumerator DespawnRoutine()
+        {
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<NetworkObject>().Despawn();
         }
     }
 }

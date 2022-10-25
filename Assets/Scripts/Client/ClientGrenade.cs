@@ -15,6 +15,7 @@ public class ClientGrenade : Explode
         
         base.OnNetworkSpawn();
     }
+    
     [ClientRpc]
     public void OnCollisionEnterClientRpc(Vector3 position)
     {
@@ -22,6 +23,6 @@ public class ClientGrenade : Explode
         if (IsServer)
             return;
         cutter.transform.position = position;
-        DoCut();
+        Invoke(nameof(DoCut), 0.01f);
     }
 }

@@ -16,7 +16,6 @@ namespace DefaultNamespace
         protected void DoCut()
         {
             cutter.DoCut();
-            Destroy(gameObject);
         }
     }
 }
