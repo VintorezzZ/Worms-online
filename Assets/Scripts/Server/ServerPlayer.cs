@@ -106,5 +106,11 @@ namespace Server
                 
             }
         }
+        
+        [ServerRpc]
+        public void DisconnectServerRpc()
+        {
+            NetworkManager.Singleton.DisconnectClient(OwnerClientId);
+        }
     }
 }

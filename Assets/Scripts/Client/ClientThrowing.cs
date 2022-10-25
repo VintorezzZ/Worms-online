@@ -42,7 +42,7 @@ namespace Client
         
             if (Input.GetMouseButton(0))
             {
-                Vector3 delta = Input.mousePosition - mouseStart;
+                Vector3 delta = mouseStart - Input.mousePosition;
                 //transform.right = delta;
                 _pointerLine.localScale = new Vector3(delta.magnitude * _sencetivity, 1, 1);
                 
@@ -52,7 +52,7 @@ namespace Client
             if (Input.GetMouseButtonUp(0))
             {
                 _renderer.enabled = false;
-                Vector3 delta = Input.mousePosition - mouseStart;
+                Vector3 delta = mouseStart - Input.mousePosition;
                 
                 _serverThrowing.ThrowServerRpc(delta);
             }
