@@ -8,17 +8,9 @@ namespace Server
     {
         [SerializeField] private float _speedMultiplier = 0.03f;
         [SerializeField] private ServerGrenade _explodePrefab;
-
-        public override void OnNetworkSpawn()
-        {
-            enabled = IsServer;
-            if (!enabled)
-                return;
-            
-            base.OnNetworkSpawn();
-        }
-
-        public override void Attack(Vector3 delta)
+        
+        [ServerRpc]
+        public override void AttackServerRpc(Vector3 delta)
         {
             Vector3 velocity = delta * _speedMultiplier;
             
@@ -27,19 +19,6 @@ namespace Server
             grenade.SetVelocity(velocity);
             grenade.GetComponent<NetworkObject>().Spawn();
             base.Attack(delta);
-        }
-        
-        [ServerRpc]
-        public void ThrowServerRpc(Vector3 delta)
-        {
-            Attack(delta);
-        }
-        
-        [ServerRpc]
-        public void UpdateRotationServerRpc(Vector3 delta)
-        {
-            rotation.Value = delta;
-            transform.right = delta;
         }
     }
 }

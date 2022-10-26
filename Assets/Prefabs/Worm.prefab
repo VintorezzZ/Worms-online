@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aaa7f0b653b4ad6abd104755afe886d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponPrefab: {fileID: 2898147816736112948, guid: eccaef32f360eaf4d83a2d02819e5c33, type: 3}
+  _weaponPrefab: {fileID: -7311376082189425184, guid: db3be9a2edf37ee4198b171fab770618, type: 3}
   _weaponRoot: {fileID: 6528936326134896478}
   _weapon: {fileID: 0}
   damageReceiver: {fileID: 0}
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6651552bb6d4c08a086afc36241614e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NetworkLifeState: {fileID: -2516107537052032483}
+  _networkLifeState: {fileID: 0}
 --- !u!114 &-2516107537052032483
 MonoBehaviour:
   m_ObjectHideFlags: 0

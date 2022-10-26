@@ -9,7 +9,7 @@ namespace Server
     public class ServerPlayer : NetworkBehaviour
     {
         private ClientPlayer _clientPlayer;
-        [SerializeField] private BaseWeapon _weaponPrefab;
+        [SerializeField] private ServerWeapon _weaponPrefab;
         [SerializeField] private Transform _weaponRoot;
         public ServerWeapon _weapon;
         public DamageReceiver damageReceiver;
@@ -40,7 +40,7 @@ namespace Server
             damageReceiver.DamageReceived += ReceiveHP;
             damageReceiver.CollisionEntered += CollisionEntered;
             
-            _weapon = Instantiate(_weaponPrefab, _weaponRoot.position, _weaponRoot.rotation) as ServerWeapon;
+            _weapon = Instantiate(_weaponPrefab, _weaponRoot.position, _weaponRoot.rotation);
             _weapon.owner = this;
             var networkWeapon = _weapon.GetComponent<NetworkObject>();
             networkWeapon.SpawnWithOwnership(OwnerClientId);

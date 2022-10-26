@@ -6,58 +6,53 @@ namespace Client
 {
     public class ClientThrowing : ClientWeapon
     {
-        private ServerThrowing _serverThrowing;
-
-        private Vector3 mouseStart;
         [SerializeField] private Renderer _renderer;
         [SerializeField] private float _sencetivity = 0.01f;
         [SerializeField] private Transform _pointerLine;
-
-        private void Awake()
-        {
-            _serverThrowing = GetComponent<ServerThrowing>();
-        }
         
         private void Start()
         {
             _renderer.enabled = false;
         }
 
-        public override void OnNetworkSpawn()
-        {
-            enabled = IsClient;
-            if (!enabled)
-                return;
-        
-            base.OnNetworkSpawn();
-        }
-
         public override void Process()
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _renderer.enabled = true;
-                mouseStart = Input.mousePosition;
+                OnMouseButtonDown();
             }
         
             if (Input.GetMouseButton(0))
             {
-                Vector3 delta = mouseStart - Input.mousePosition;
-                //transform.right = delta;
-                _pointerLine.localScale = new Vector3(delta.magnitude * _sencetivity, 1, 1);
-                
-                _serverThrowing.UpdateRotationServerRpc(delta);
+               OnMouseButton();
             }
 
             if (Input.GetMouseButtonUp(0))
             {
-                _renderer.enabled = false;
-                Vector3 delta = mouseStart - Input.mousePosition;
-                
-                _serverThrowing.ThrowServerRpc(delta);
+                OnMouseButtonUp();
             }
 
-            transform.right = _serverThrowing.rotation.Value;
+            base.Process();
+        }
+
+        protected override void OnMouseButtonDown()
+        {
+            _renderer.enabled = true;
+            base.OnMouseButtonDown();
+        }
+
+        protected override void OnMouseButton()
+        {
+            Vector3 delta = mouseStart - Input.mousePosition;
+            _pointerLine.localScale = new Vector3(delta.magnitude * _sencetivity, 1, 1);
+            base.OnMouseButton();
+        }
+
+        protected override void OnMouseButtonUp()
+        {
+            _renderer.enabled = false;
+            Vector3 delta = mouseStart - Input.mousePosition;
+            serverWeapon.AttackServerRpc(delta);
         }
     }
 }
